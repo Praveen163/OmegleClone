@@ -1,0 +1,56 @@
+.connection-status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-indicator.connected {
+  background-color: rgba(52, 199, 89, 0.15);
+  color: #2d8a48;
+}
+
+.status-indicator.searching {
+  background-color: rgba(255, 204, 0, 0.15);
+  color: #b38600;
+}
+
+.status-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+}
+
+.status-indicator.connected .status-dot {
+  background-color: #34c759;
+}
+
+.status-indicator.searching .status-dot {
+  background-color: #ffcc00;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(255, 204, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+  }
+}
+
+.status-text {
+  display: inline-block;
+} 

@@ -1,0 +1,25 @@
+name: Server Build
+
+on: [push]
+
+jobs:
+  build-server:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./server
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install server dependencies
+        run: npm install
+
+      - name: Run server test
+        run: npm test

@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+.omegle-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.slogan {
+    font-size: 18px;
+    color: #333;
+}
+
+.omegle-header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.online-counter {
+    color: #4285f4;
+    font-weight: bold;
+}
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-grow: 1;
+    padding: 0;
+    gap: 15px;
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
+
+/* Video Call Section */
+.video-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #eee;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100%;
+    width: 30%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 50%;
+    background-color: black;
+}
+
+/* Messaging Section */
+.messaging-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.connection-info {
+    font-size: 14px;
+    color: #666;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-indicator {
+    font-size: 0.8rem;
+    color: #888;
+    background-color: #f0f2f5;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* Create a proper scrollable container for messages */
+#messageBox {
+    flex: 1; 
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 transparent;
+}
+
+#messageBox::-webkit-scrollbar {
+    width: 6px;
+}
+
+#messageBox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#messageBox::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 20px;
+}
+
+/* Fix input container position */
+.input-container {
+    padding: 0;
+    width: 100%;
+    background: white;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    border-top: 1px solid #eee;
+}
+
+.input-container form {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+}
+
+.input-container input[type="text"] {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container input[type="submit"],
+.input-container input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.input-container input[type="button"] {
+    background-color: #ff3333;
+}
+
+.chat-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.chat-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+    }
+    
+    .video-container, .messaging-container {
+        width: 100%;
+        height: 50vh;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+    
+    .sent-message {
+        margin-left: 15%;
+    }
+    
+    .received-message {
+        margin-right: 15%;
+    }
+}

@@ -1,7 +1,8 @@
 {
   "name": "server",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "author": "Praveen Kumar",
+  "description": "Scalable anonymous video chat backend using Node.js, Socket.IO, Redis",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -9,7 +10,6 @@
     "start": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.8",

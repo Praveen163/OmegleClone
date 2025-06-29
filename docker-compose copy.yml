@@ -10,12 +10,16 @@ services:
     build: ./server
     container_name: server
     restart: always
+    ports:
+      - "5000:5000"  # only if you want external access
     depends_on:
       - redis
 
   redis:
     image: redis
     container_name: redis
+    ports:
+      - "6379:6379"
 
   prometheus:
     image: prom/prometheus

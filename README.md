@@ -1,3 +1,10 @@
+### ⚠️ **Note**
+> 🟡 **This app is deployed on Amazon AWS without an SSL certificate** (i.e., served over **HTTP only**).  
+> 📸 Because of this, **some browsers might block camera permissions**.  
+> 💬 **However, the chat functionality will still work fine.**
+
+
+
 # Omegle Clone
 
 A full-stack real-time chat application inspired by Omegle, allowing users to connect and chat (text and video) with random strangers. The project is containerized using Docker and includes monitoring with Prometheus and Grafana.

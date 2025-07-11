@@ -1,6 +1,10 @@
 name: Server Build
 
-on: [push]
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   build-server:
@@ -20,6 +24,69 @@ jobs:
 
       - name: Install server dependencies
         run: npm install
+      
+      - name: Building App
+        run: npm run build
 
+  build-client:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./client
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install client dependencies
+        run: npm install
+      
+      - name: Building App
+        run: npm run build
+
+  test-server:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./server
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install server dependencies
+        run: npm install
+      
       - name: Run server test
+        run: npm test
+
+  test-client:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./client
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install client dependencies
+        run: npm install
+      
+      - name: Run client test
         run: npm test

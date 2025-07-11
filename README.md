@@ -103,6 +103,18 @@ npm install
 npm run dev
 ```
 
+### Building the Client
+```bash
+cd client
+npm run build
+```
+
+### Testing the Client
+```bash
+cd client
+npm test
+```
+
 ### Backend
 ```bash
 cd server
